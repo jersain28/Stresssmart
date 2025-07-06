@@ -9,7 +9,7 @@ class StressScreen extends StatefulWidget {
 }
 
 class _StressScreenState extends State<StressScreen> {
-  int valor = 0; // Valor inicial, puedes cambiarlo
+  int valor = 0; // Valor inicial
   double get progreso => valor / 100;
   String get nivel => obtenerNivelEstres(valor);
 
@@ -102,29 +102,34 @@ class _StressScreenState extends State<StressScreen> {
                       ),
                       child: TextButton(
                         onPressed: () async {
-                          // Simula una nueva medición aleatoria
-                          int nuevoValor = (1 + (99 * (DateTime.now().millisecondsSinceEpoch % 1000) / 1000)).toInt();
-                          setState(() {
-                            valor = nuevoValor;
-                          });
+                          int nuevoValor = await obtenerValorDeSensor();
+
+                          // Animación de llenado progresivo
+                          for (int i = 0; i <= nuevoValor; i++) {
+                            await Future.delayed(const Duration(milliseconds: 20)); // Ajusta la velocidad aquí
+                            setState(() {
+                              valor = i;
+                            });
+                          }
 
                           await FirebaseFirestore.instance.collection('mediciones_estres').add({
                             'valor': valor,
                             'nivel': nivel,
                             'fecha': DateTime.now(),
                           });
+
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
                                 'Medición guardada: $nivel',
-                                style: const TextStyle(fontSize: 14), // Tamaño de texto más pequeño
+                                style: const TextStyle(fontSize: 7),
                                 textAlign: TextAlign.center,
                               ),
-                              behavior: SnackBarBehavior.floating, // Flotante, más compacto
-                              margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20), // Márgenes para smartwatch
+                              behavior: SnackBarBehavior.floating,
+                              margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12), // Menos padding
-                              duration: const Duration(seconds: 2), // Más corto si lo deseas
+                              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                              duration: const Duration(seconds: 2),
                             ),
                           );
                         },
@@ -154,6 +159,12 @@ class _StressScreenState extends State<StressScreen> {
         ),
       ),
     );
+  }
+
+  Future<int> obtenerValorDeSensor() async {
+    // TODO: Implementar lectura real del sensor del smartwatch aquí.
+    await Future.delayed(const Duration(milliseconds: 500));
+    return (1 + (99 * (DateTime.now().millisecondsSinceEpoch % 1000) / 1000)).toInt();
   }
 
   String obtenerNivelEstres(int valor) {
