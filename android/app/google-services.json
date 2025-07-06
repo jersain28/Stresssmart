@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "791501340484",
+    "project_id": "stress-c953a",
+    "storage_bucket": "stress-c953a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791501340484:android:b195a2fdb574ecb8d0a111",
+        "android_client_info": {
+          "package_name": "com.example.estres"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791501340484-gi3ei2r9los1omhrfdm4fv6eq0krhu5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIsfOoEkTWDYiiV9Qb2bjhcgCbrOonKcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791501340484-gi3ei2r9los1omhrfdm4fv6eq0krhu5q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "791501340484-ht5gerkoesk4qmc8etjs43quvh2ivvjh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.stress"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791501340484:android:339e55f74ce58f10d0a111",
+        "android_client_info": {
+          "package_name": "com.example.stress"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791501340484-niblv6fljh2caq1d20nla9ptmoptatj8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.stress",
+            "certificate_hash": "94a0ef6691c83b4be9709c1522d48f802f8c26bd"
+          }
+        },
+        {
+          "client_id": "791501340484-gi3ei2r9los1omhrfdm4fv6eq0krhu5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIsfOoEkTWDYiiV9Qb2bjhcgCbrOonKcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791501340484-gi3ei2r9los1omhrfdm4fv6eq0krhu5q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "791501340484-ht5gerkoesk4qmc8etjs43quvh2ivvjh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.stress"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
